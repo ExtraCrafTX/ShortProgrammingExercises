@@ -92,38 +92,38 @@ public class EndangeredAnimals {
     
     /**
      * Gets the name of the specified animal
-     * @param a The animal to get the name of
+     * @param animal The animal to get the name of
      * @return The name of the animal
      */
-    public static String getName(Animal a){
-        return a.name;
+    public static String getName(Animal animal){
+        return animal.name;
     }
     
     /**
      * Gets the number of the animal that are left
-     * @param a The animal to get the number of
+     * @param animal The animal to get the number of
      * @return The number of that animal that are left
      */
-    public static int getLeft(Animal a){
-        return a.left;
+    public static int getLeft(Animal animal){
+        return animal.left;
     }
     
     /**
      * Sets the name of the specified animal
-     * @param a The animal to set the name of
+     * @param animal The animal to set the name of
      * @param name The name to set it to
      */
-    public static void setName(Animal a, String name){
-        a.name = name;
+    public static void setName(Animal animal, String name){
+        animal.name = name;
     }
     
     /**
      * Sets the number of the specified animal
-     * @param a The animal to set the number of
+     * @param animal The animal to set the number of
      * @param left The number of it there are left
      */
-    public static void setLeft(Animal a, int left){
-        a.left = left;
+    public static void setLeft(Animal animal, int left){
+        animal.left = left;
     }
     
 }
