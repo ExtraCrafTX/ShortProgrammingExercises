@@ -18,15 +18,16 @@ public class FilmBoxOffice {
      */
     public static void main(String[] args) {
         //Creates a new array of Films
-        Film[] films = new Film[4];
+        FilmDatabase films = new FilmDatabase();
         //Loops through the array and initialises it with the user's input
-        for(int i = 0; i < films.length; i++){
-            films[i] = new Film();
+        for(int i = 0; i < 4; i++){
+            Film film = new Film();
             int screen = i+1;
-            setScreen(films[i], screen);
-            setName(films[i], inputName(screen));
-            setStartHour(films[i], inputHour());
-            setStartMinutes(films[i], inputMinutes());
+            setScreen(film, screen);
+            setName(film, inputName(screen));
+            setStartHour(film, inputHour());
+            setStartMinutes(film, inputMinutes());
+            addFilm(films, film);
         }
         //Outputs the films in a good format
         outputFilms(films);
@@ -77,11 +78,11 @@ public class FilmBoxOffice {
     
     /**
      * Outputs the films in a presentable format
-     * @param films The array of films to output
+     * @param databse The database of films to output
      */
-    public static void outputFilms(Film[] films){
+    public static void outputFilms(FilmDatabase databse){
         System.out.println("CinemaWorld films today:");
-        for(Film film : films){
+        for(Film film : databse.films){
             System.out.println("Screen " + getScreen(film) + ": " + getName(film) + "\t" + formatTime(getStartHour(film)) + ":" + formatTime(getStartMinutes(film)));
         }
     }
@@ -171,6 +172,52 @@ public class FilmBoxOffice {
         film.startMinutes = startMinutes;
     }
     
+    /**
+     * Gets the film at the specified index in the specified database
+     * @param database The database to get the film from
+     * @param index The index of the film
+     * @return The film at the specified index;
+     */
+    public static Film getFilm(FilmDatabase database, int index){
+        return database.films[index];
+    }
+    
+    /**
+     * Sets the film at the specified index in the specified database
+     * @param database The database to set the film in
+     * @param index The index to set
+     * @param film The film to set it to
+     */
+    public static void setFilm(FilmDatabase database, int index, Film film){
+        database.films[index] = film;
+    }
+    
+    /**
+     * Adds the specified film to the database
+     * @param database The database to add the film to
+     * @param film The film to add
+     */
+    public static void addFilm(FilmDatabase database, Film film){
+        Film[] films = new Film[database.films.length + 1];
+        for(int i = 0; i < films.length - 1; i++){
+            films[i] = database.films[i];
+        }
+        films[films.length - 1] = film;
+        database.films = films;
+    }
+    
+    /**
+     * Removes the last film from the specified database
+     * @param database The database to remove film from
+     */
+    public static void removeFilm(FilmDatabase database){
+        Film[] films = new Film[database.films.length - 1];
+        for(int i = 0; i < films.length; i++){
+            films[i] = database.films[i];
+        }
+        database.films = films;
+    }
+    
 }
 
 //Record for films
@@ -179,4 +226,9 @@ class Film{
     String name;
     int startHour;
     int startMinutes;
+}
+
+//Abstraction for film database
+class FilmDatabase{
+    Film[] films = new Film[0];
 }
