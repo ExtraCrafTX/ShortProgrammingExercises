@@ -1,3 +1,9 @@
+/**
+ * This program takes the user's score in two tests, calculates
+ * their fitness age and tells them how far their fitness age
+ * is from their actual age.
+ */
+
 //Imports Scanner class
 import java.util.Scanner;
 
