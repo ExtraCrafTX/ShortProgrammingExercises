@@ -35,7 +35,7 @@ public class BonusScheme {
     }
     
     /**
-     * Used to multiply the hardwork score befor calculating the performance
+     * Used to multiply the hardwork score before calculating the performance
      * @param hardWorkScore The employee's hardwork score
      * @return The hardwork score * 5
      */
