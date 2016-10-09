@@ -22,7 +22,12 @@ public class ParalympicRelay {
         for(int i = 1; i <= 4; i++){
             total += getScore(i);
         }
-        checkTotal(total);
+        boolean isValid = checkTotal(total);
+        if(isValid){
+            System.out.println("This team has " + total + " points so is legal.");
+        }else{
+            System.out.println("This team has " + total + " points so is NOT legal.");
+        }
     }
     
     /**
@@ -40,13 +45,15 @@ public class ParalympicRelay {
      * Checks the total score to make sure it is valid
      * @param total The total score for the team
      */
-    public static void checkTotal(int total){
+    public static boolean checkTotal(int total){
         if(total > 32){
-            System.out.println("This team has " + total + " points so is NOT legal.");
+            return false;
         }else if(total >= 4){
-            System.out.println("This team has " + total + " points so is legal.");
+            return true;
         }else{
             System.out.println("You have made an error in your input. Please try again.");
+            System.exit(0);
+            return false;
         }
     }
     
