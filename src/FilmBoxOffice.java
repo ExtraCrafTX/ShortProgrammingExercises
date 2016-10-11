@@ -50,7 +50,7 @@ public class FilmBoxOffice {
      */
     public static int inputHour(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What time does it start? (Hour)");
+        System.out.println("What time does it start? (Hour 0-23)");
         int hour = scanner.nextInt();
         if(hour  < 0 || hour > 23){
             System.out.println("Please input a valid hour (0-23).");
@@ -66,7 +66,7 @@ public class FilmBoxOffice {
      */
     public static int inputMinutes(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What time does it start? (Minutes past the hour)");
+        System.out.println("What time does it start? (Minutes past the hour 0-59)");
         int minutes = scanner.nextInt();
         if(minutes < 0 || minutes > 59){
             System.out.println("Please input valid minutes (0-59).");

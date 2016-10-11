@@ -34,6 +34,19 @@ public class EndangeredAnimals {
         setName(animals[3], "Florida Panther");
         setName(animals[4], "White Rhino");
         
+        Animal mostEndangered = getAnimalsLeft(animals);
+        
+        outputMostEndangered(mostEndangered);
+        System.out.println();
+        outputList(animals);
+    }
+    
+    /**
+     * Gets the number of animals for each species left and finds the most endangered
+     * @param animals The array of animals
+     * @return The most endangered animal
+     */
+    public static Animal getAnimalsLeft(Animal[] animals){
         //Decalre new record to store most endangered animal and initialise it
         Animal mostEndangered = new Animal();
         setLeft(mostEndangered, 0);
@@ -52,9 +65,7 @@ public class EndangeredAnimals {
             //Empty line
             System.out.println();
         }
-        outputMostEndangered(mostEndangered);
-        System.out.println();
-        outputList(animals);
+        return mostEndangered;
     }
     
     /**

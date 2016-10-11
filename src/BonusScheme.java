@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class BonusScheme {
     
     //Declare and initialise constants
-    public static final String QUESTION_PROFIT_SCORE = "Profit score?";
-    public static final String QUESTION_HARDWORK_SCORE = "Hard work score?";
+    public static final String QUESTION_PROFIT_SCORE = "Profit score? (whole number > 0)";
+    public static final String QUESTION_HARDWORK_SCORE = "Hard work score? (whole number > 0)";
     public static final String PERFORMANCE_SCORE_1 = "Your performance score this year is ";
     public static final String PERFORMANCE_SCORE_2 = " out of 10.";
     public static final String BONUS = "Your bonus is £";

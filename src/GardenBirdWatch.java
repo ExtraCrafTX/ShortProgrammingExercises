@@ -41,7 +41,6 @@ public class GardenBirdWatch {
             if(number <= 0){
                 System.out.println(NUM_TOO_SMALL);
                 System.out.println();
-                input = getBirdName();
                 continue;
             }
             if(number > maxNumber){
