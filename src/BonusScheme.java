@@ -19,6 +19,10 @@ public class BonusScheme {
     public static final String PERFORMANCE_SCORE_1 = "Your performance score this year is ";
     public static final String PERFORMANCE_SCORE_2 = " out of 10.";
     public static final String BONUS = "Your bonus is £";
+    public static final int PROFIT_MULTIPLIER = 2;
+    public static final int HARDWORK_MULTIPLIER = 5;
+    public static final int PERFORMANCE_DIVIDER = 7;
+    public static final int BONUS_MULTIPLIER = 5000;
     
     //Main method executed on launch, calls calculateBonus which handles the program
     public static void main(String[] args) {
@@ -31,7 +35,7 @@ public class BonusScheme {
      * @return The profit score * 2
      */
     public static int multiply2(int profitScore){
-        return profitScore*2;
+        return profitScore*PROFIT_MULTIPLIER;
     }
     
     /**
@@ -40,7 +44,7 @@ public class BonusScheme {
      * @return The hardwork score * 5
      */
     public static int multiply5(int hardWorkScore){
-        return hardWorkScore*5;
+        return hardWorkScore*HARDWORK_MULTIPLIER;
     }
     
     /**
@@ -51,7 +55,7 @@ public class BonusScheme {
     public static int getPerformanceScore(Employee employee){
         int profitScore = multiply2(getProfitScore(employee));
         int hardWorkScore = multiply5(getHardWorkScore(employee));
-        int performanceScore = (profitScore + hardWorkScore)/7;
+        int performanceScore = (profitScore + hardWorkScore)/PERFORMANCE_DIVIDER;
         return performanceScore;
     }
     
@@ -61,7 +65,7 @@ public class BonusScheme {
      * @return The bonus to be received by the employee
      */
     public static int getBonus(int performanceScore){
-        return performanceScore*5000;
+        return performanceScore*BONUS_MULTIPLIER;
     }
     
     /**
